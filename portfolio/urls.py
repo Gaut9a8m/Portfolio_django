@@ -8,6 +8,6 @@ import jobs.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('index/', jobs.views.home , name='home'),
-    url('blog/', include('blog.urls'))
+    url(r'^$', jobs.views.home , name='home'),
+    url(r'^blog/$', include('blog.urls'))
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
